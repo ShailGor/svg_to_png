@@ -4,9 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start:build": "tsc -w",
-    "start:run": "nodemon build/server.js",
-    "start": "concurrently npm:start:*"
+    "build": "tsc -w",
+    "start": "tsc && node build/server.js"
   },
   "author": "",
   "license": "ISC",
