@@ -45,12 +45,12 @@ export const svgToPng = async (req: customRequest, res: Response) => {
         // for png file upload
         let png_file = await uploadimageToS3(file, 'png');
         // console.log(png_file);
-        data.png_link = 'http://smartsense-nodejs-poc.s3.ap-south-1.amazonaws.com/' + png_file;
+        data.png_link = 'http://svg-to-png-bucket.s3.ap-south-1.amazonaws.com/' + png_file;
 
         // for svg file upload
         let svg_file = await uploadimageToS3(svgBuffer, 'svg');
         // console.log(svg_file);
-        data.svg_link = 'http://smartsense-nodejs-poc.s3.ap-south-1.amazonaws.com/' + svg_file;
+        data.svg_link = 'http://svg-to-png-bucket.s3.ap-south-1.amazonaws.com/' + svg_file;
 
         await addLink(data);
 
